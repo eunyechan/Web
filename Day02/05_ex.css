@@ -1,0 +1,11 @@
+h1{border-bottom: 1px solid gray; color: darkseagreen; font-family: serif;}
+body{background-color: teal;}
+
+a:link{color: black;}
+a:visited{color: blueviolet;}
+
+a:hover{color: burlywood;}
+a:active{color: chocolate;}
+
+h2{color: deepskyblue; font-family: serif;}
+table{background-color: floralwhite; border-style: groove; margin-left: 700px;}

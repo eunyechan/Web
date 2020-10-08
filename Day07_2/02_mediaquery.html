@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>미디어쿼리</title>
+        <meta charset="utf-8">
+
+        <style>
+            /* 반응형웹을 위해 필요한 2가지 기술 */
+            /* 1. 뷰포트(viewport) : 하이브리드 수업시간에 소개 */
+            /* 2. 미디어쿼리 : css의 선택적용 기술*/
+
+            /* 미디어쿼리를 적용하는 2가지 방법 */
+            /* 방법1) @media 키워드 사용 */
+            #aa{
+                width: 320px;
+                height: 100px;
+                background-color: green;
+            }
+
+            /* 브라우저의 너비가 560px 이상일 때 적용 */
+            @media(min-width:680px){
+
+                #aa{
+                width: 680px;
+                height: 200px;
+                background-color: yellow;
+                }
+
+            }
+        
+            
+        </style>
+
+            <!-- 방법2) media속석 사용 -->
+            <link rel="stylesheet" href="./02_mediaquery.html" media="(min-width:750px) and (max-width:840px)">
+
+            <!-- 내부 스타일시트에도 media속성 가능 -->
+            <style media="(min-width:840px)">
+                #aa{
+                    width: 840px;
+                    height: 400px;
+                    background-color: turquoise;
+                }
+
+            </style>
+
+    </head>
+
+    <body>
+        
+        <div id="aa">
+
+        </div>
+
+    </body>
+</html>

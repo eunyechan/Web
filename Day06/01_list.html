@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>List style</title>
+        <meta charset="utf-8">
+
+        <style>
+            ul.aa{list-style-type: disc;}
+            ul.bb{list-style-type: circle;}
+
+            /* list-style-position속성 [inside:들여쓰기, outside(기본위치)]*/
+            ul.cc{list-style-type: square; list-style-position: inside;}
+
+            /* 리스트의 블릿기호를 이미지로(잘 사용안함) - 이미지사이즈 지정안됨*/
+            ul.dd{
+                list-style-image: url('./pa.jpg');
+                list-style-position: inside;
+            }
+
+            /* 순서가 있는 리스트 스타일*/
+            ol#ee{ list-style: lower-alpha;}
+            ol#ee{ list-style: lower-roman;}
+            ol#ee{ list-style: lower-greek;}
+            ol#ee{ list-style: upper-roman;}
+            /* ol#ee{ list-style: square;} */
+        </style>
+    </head>
+
+    <body>
+        
+        <ul class="aa">
+            <li>HTMLl5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+        </ul>
+
+        <ul class="bb">
+            <li>HTMLl5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+        </ul>
+
+        <ul class="cc">
+            <li>HTMLl5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+        </ul>
+
+        <ul class="dd">
+            <li>HTMLl5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+        </ul>
+
+        <!-- 순서가 있는 리스트 -->
+        <ol id="ee">
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+
+    </body>
+</html>

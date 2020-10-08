@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>투명도,가시성</title>
+        <meta charset="utf-8">
+
+        <style>
+            div{
+                width: 50px;
+                height: 50px;
+                background-color: bisque;
+                border: 1px solid black;
+                text-align: center;
+            }
+            /* 이동 */
+            #b2{
+                background-color: brown;
+                transform: translate(100px, 0px);
+            }
+            /* 크기 조정 */
+            #b3{
+                background-color: cadetblue;
+                transform: scale(1.2, 1.2);
+            }
+
+            /*회전 */
+            #b4{
+                background-color: chocolate;
+                transform: rotate(30deg);
+            }
+
+
+        </style>
+        
+    </head>
+
+
+
+    <body>
+        
+       <div>box1</div>
+       <div id="b2">box2</div>
+       <div id="b3">box3</div>
+       <div id="b4">box4</div>
+
+    </body>
+</html>

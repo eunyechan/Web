@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page1</title>
+        <style>
+            p{color: bisque;}
+        </style>
+    </head>
+
+    <body>
+        <p>Hello world</p>
+        <!-- 그럼 혹시 이 html요소가 2개 있다면?? -->
+    </body>
+</html>
+
+<!-- body 안에 있는 것보다 head안에 있는 것을 먼저 함 무조건 -->
+<html>
+    <head>
+        <!-- title요소가 2번 작성되어 있다면 첫번째 것만 적용 -->
+        <title>page2</title>
+
+        <!-- style요소는 작성한 순서대로 적용되므로 -->
+        <!-- 처음에 red로 지정된 것이 이곳에서 blue로 변경 -->
+        <style>
+            p{color: blue;}
+        </style>
+    </head>
+
+    <body>
+        <p>Nice to meet you</p>
+    </body>
+</html>
+
+<!-- html 밖에 있어도 문서에 있는 글씨이므로 그대로 나옴 -->
+Good Job!!
+
+<!-- html 밖에 있어도 태그의 기본 특징이 적용 -->
+<h1>HTML5</h1>

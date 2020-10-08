@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>animation</title>
+        <meta charset="utf-8">
+
+        <style>
+            div#aa{
+                /* 원모양 */
+                width: 50px;
+                height: 50px;
+                border-radius: 25px;
+
+                background-color: darkblue;
+
+                /* 위치를 지정하는 속성 left, top..은 position이 static 아니어야 함 */
+                position: absolute;
+                /* left: 10px;
+                top: 20px */
+                /* 아래에 설계한 애니메이션 적용 */
+                animation-name: myanim;
+                animation-name: bounce;
+
+                animation-duration: 3s;
+                animation-iteration-count: 5;  /*5번 반복*/
+                
+            }
+
+            /* 애니메이션 설계 */
+            @keyframes myanim
+            {
+                0% {left: 0px; top: 0px;}
+                25%{left: 100px; top: 0px;}
+                50%{left: 200px; top: 200px;}
+                100%{left: 0px; top: 0px;}
+            }
+
+            @keyframes bounce{
+                from, to{
+                    bottom: 0px;
+                    animation-timing-function: ease-out;
+                }
+
+                50%{
+                    bottom: 200px;
+                    animation-timing-function: ease-in;
+                }
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="aa"></div>
+        
+   </body>
+</html>

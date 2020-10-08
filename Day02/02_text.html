@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>02 text ex</title>
+    </head>
+
+    <body>
+        
+        이곳에 글씨를 쓰면 브라우저에 보입니다.
+        두번째 줄입니다. 엔터를 눌러도 자동 줄바꿈되지 않습니다.
+        띄어쓰기도..          어차피 하나로만 인지됩니다.
+        특수문자 : ~!@#$%^&*()_+|\={}[?/><]'";"' 다 나옵니다.
+
+        <!-- <a 이런식으로 작성하면 출력안되므로.. -->
+        <!-- 가급적 특수문자는 html의 특수문자표를 사용하는 것을 권장 -->
+        <!-- 부등호(<>)나 띄어쓰기 같은 것을 엔티티(Entity: 개체, 정보단위) -->
+        &lt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;&amp;&copy;&spades;
+
+        <p>단락요소는 자동으로 한줄을 차지하게 됩니다.</p>
+        <p>당연하게 이것은 <br> 두번째 단락이므로 <br> 자동 줄바꿈이 됨</p>
+        <!-- br요소는 end Tag가 없음 : 이런 요소를 Empty Element라고 부름 -->
+
+        <p>종료태그가 없어도 에러는 아니지만 html5에서 권장하지 않음
+
+        <!-- 요소안에 작성환 코드 그대로 표시되는 요소 -->
+        <pre>
+            이 안에 작성한 글씨는 쓴대로 .. 보임.
+            이렇게 줄바꿈도 보임
+
+            띄어쓰기도       됩니다.
+            근데 좋지는 않아.. 글꼴도 이상하고 검색기능도 제한
+        </pre>
+
+        
+        <h1>This is Heading Element</h1>
+        <h2>This is Heading Element</h2>
+        <h3>This is Heading Element</h3>
+        <h4>This is Heading Element</h4>
+        <h5>This is Heading Element</h5>
+        <h6>This is Heading Element</h6>
+        <!-- 혹시 잘못된 번호 사용하면 에러는 아니지만 heading 요소로 인지되지 않음.-->
+        <h7>This is Heading Element</h7>
+
+        <p>텍스트 서식 <strong>강하게</strong> 입니다.</p>
+        <p>텍스트 서식 <em>강조</em> 입니다.</p>
+
+        <!-- 수평선 -->
+        <hr><!-- empty element -->
+
+        
+    </body>
+</html>

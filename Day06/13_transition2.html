@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>전환효과2</title>
+        <meta charset="utf-8">
+
+        <style>
+            div.aa img{
+                background-color: cadetblue;
+                width: 200px;
+                height: 100px;
+
+                transition: width 3s, height 3s, background-color 3s, transform;
+            }
+
+            div.aa img:hover{
+                width: 300px;
+                height: 150px;
+                background-color: cornflowerblue;
+
+                transform: rotate(30deg);
+                transform: rotate(1.5rad);
+
+            }
+        </style>
+    
+    </head>
+
+
+
+    <body>
+       <div class="aa">
+           <img src="./imag2.jpg" alt="imag2">
+           <img src="./imag1.jpg" alt="imag1">
+
+       </div> 
+       
+       
+    </body>
+</html>

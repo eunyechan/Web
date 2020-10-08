@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04 ex</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+
+        <!-- 리스트 -->
+        <ul>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ul>
+
+        <ol>
+            <li>aaa</li>
+            <li>bbb</li>
+            <li>ccc</li>
+        </ol>
+
+        <dl>
+            <dt>aaa</dt>
+            <dd>이것은 Definition Data입니다.</dd>
+            <dt>bbb</dt>
+            <dd>이것은 Definition Data입니다.</dd>
+            <dt>ccc</dt>
+            <dd>이것은 Definition Data입니다.</dd>
+        </dl>
+
+        <!-- <a> anchor 요소: (inline요소) -->
+        <a href="http://www.naver.com" target="_self">NAVER [절대경로 지정]</a>
+        <a href="./02_text.html" target="_blank">상대주소 : 같은 폴더</a>
+        <a href="../Day01/index.html" target="_top">상대주소 : 다른 폴더</a>
+        <br>
+        <a href="#help">도움말 위치로...</a>
+        <hr>
+        <h4 id="help">도움말</h4>
+
+        <!-- 앵커요소를 한줄에 하나씩 배치할 때는 아래 방식을 더 선호 -->
+        <p><a href="">aaa</a></p>
+        <p><a href="">bbb</a></p>
+
+        <ul>
+            <li><a href="">111</a></li>
+            <li><a href="">222</a></li>
+            <li><a href="">333</a></li>
+        </ul>
+
+        <!-- 이메일링크 -->
+        <p><a href="mailto:96kite@hanmail.net">96kite@hanmail.net</a></p>
+
+        <!-- 이미지 보기 -->
+        <p><a href="http://eunyechan.dothome.co.kr/dica.jpg" target="_blank">이미지 링크</a></p>
+        <p><a href="./pa.jpg">이미지 링크 : 상대주소</a></p>
+
+        <!-- 이미지나 .html같은 문서가 아닌경우의 링크 : 다운로드 링크 -->
+        <p><a href="http://eunyechan.dothome.co.kr/aaa.hwp">한글문서 링크(다운로드)</a></p>
+        <p><a href="http://eunyechan.dothome.co.kr/aaa.zip">한글문서 링크(다운로드)</a></p>
+
+
+        <!-- 이미지 <img>는 empty 요소, inline요소-->
+        <!-- 상대경로 -->
+        <img src="./pa.jpg" alt="에펠탑">  
+        <img src="./dsd.jpg" alt="dsd">
+        <!-- 절대경로 -->
+        <img src="http://eunyechan.dothome.co.kr/dica.jpg" alt="dica" width="200" height="100" border="2">
+
+        <p>
+            <img src="./pa.jpg" alt="">
+        </p>
+        
+    </body>
+
+</html>

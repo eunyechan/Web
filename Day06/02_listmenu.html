@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>nav menu style</title>
+        <meta charset="utf-8">
+
+        <style>
+
+            ul{
+                list-style: none;
+                border-top: 1px solid red;
+                border-bottom: 1px solid red;
+                padding: 10px 0px;
+                text-align: center; /*블럭요소안의 콘텐츠(글씨, 자식요소)를 가운데 정렬*/
+            }
+
+            ul li{
+                display: inline;
+                text-transform: uppercase;
+                padding: 0px 10px;
+                letter-spacing: 10px;
+            }
+
+            ul li a{color: black; text-decoration: none;}
+            ul li a:hover{text-decoration: underline;}
+
+            #header{
+                background-image: url('./pa.jpg');
+                background-size: cover;
+                height: 400px;
+
+                color: beige;
+                text-align: center;
+                padding: 3em 0em;
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- 해더이미지 -->
+        <div id="header">
+            <h1>HOME PAGE</h1>
+            <p>This is my homepage</p>
+        </div>
+        
+        <ul>
+            <!-- a 다른 페이지로 이동할때 없으면 #써놓기를 권장 -->
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+
+    </body>
+</html>

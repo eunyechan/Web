@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+
+    </head>
+
+    <body>
+        <h2 id="aa"></h2>
+        <hr>
+        <h2 id="bb"></h2>
+
+        <script>
+            //웹 스토리지 : 웹문서(html)가 데이터를 사용자의 컴퓨터에 저장할 수 있도록 하는 기법(일종의 쿠키(4KB)) :
+            //웹 스토리지는 5MB
+
+            //웹 스토리지..2가지 저장소
+            //1.localStorage - 같은도메인은 같은 저장소 공유가능 : 브라우저가 닫혀도 정보유지
+            if( !localStorage.cnt ){
+                localStorage.cnt=0;
+            }
+
+            //기존의 cnt값 1 증가 (무조건 저장값은 string임)
+            localStorage.cnt= parseInt(localStorage.cnt)+1;
+
+            document.getElementById('aa').innerHTML= localStorage.cnt+ "번째 방문!";
+ 
+            //2.sessionStorage - 같은도메인은 같은 저장소 공유가능 : 브라우저가 닫히면 정보소실
+            if( !sessionStorage.cnt ){
+                sessionStorage.cnt=0;
+            }
+
+            sessionStorage.cnt= parseInt(sessionStorage.cnt)+1;
+
+            document.getElementById('bb').innerHTML= sessionStorage.cnt+ "번째 방문!"        
+        </script>
+
+        <hr>
+        <a href="./aaa.html">aaa</a>
+
+    </body>
+</html>

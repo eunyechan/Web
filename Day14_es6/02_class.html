@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        
+        <script>
+
+            //객체를 생성하는 새로운 방법: class키워드 등장 [java언어와 사용법 유사함] / ES5버전에서 등장
+            //1. 클래스 선언 [객체를 만든 것이 아님]
+            class Person{
+                //멤버변수 - 속성 property
+                //let name;   //ERROR
+                //this.name="aaa";    //ERROR
+
+                name= 'sam';
+                tel;
+
+                //많이 쓰는 방식은 생성자함수에서 멤버변수(속성) 생성
+                //생성자함수 - 자바와 다르게 constructor()
+                constructor(){
+                    this.age= 20;   //이 때 멤버변수 추가
+                    this.address= 'seoul';
+
+                    let gender= "male"; //이건 지역변수임
+                }//constructor
+
+                //멤버함수 - 메소드
+                //function aaa(){}    //ERROR : function 키워드 사용금지
+                show(){
+                    //document.write(name+ ', '+ age+ ', '+ address+ '<br>');   //ERROR
+                    //클래스 안에서 다른 멤버를 사용할 때는 반드시 this. 키워드 필요
+                    document.write(this.name+ ', '+ this.age+ ', '+ this.address+ '<br>');
+                }
+
+                aaa(){
+                    //다른 멤버함수 호출
+                    //bbb();  //ERROR
+                    this.bbb(); //반드시 이렇게 부르기 (this)
+                }
+
+                bbb(){
+                    document.write('bbb<br>');
+                }
+
+                //익명함수로 멤버함수 만들기 
+                out= function(){
+                    document.write('out!!<br>');
+                }
+
+                //다른 함수를 멤버변수로 대입가능함
+                //JS에서는 함수를 개체로 바라보기에 변수에 대입이 됨
+                //그래서 함수 전달도 가능함
+                sss= kkk;
+
+            }//class..
+
+            function kkk(){
+                document.write('kkk<br>');
+            }
+
+            //객체생성
+            let p= new Person();
+            document.write( p.name+'<br>');
+            document.write( p.address+'<br>');
+            document.write( p.age+'<br>');
+            document.write( p.tel+'<br>');
+
+            p.age= 25;
+            document.write( p.age+'<br>');
+
+            p.show();
+
+        </script>
+
+        <!-- 다른 스크립트영역 -->
+        <script>
+            //같은 .html문서 안에서 다른 스크립트 영역에서도 Person클래스를 인식할 수 있음
+            let p2= new Person();
+            p2.show();
+            p2.out();
+            p2.sss();
+
+            //객체를 생성하면서 값 전달하기 - 생성자 함수에 파라미터 사용
+            class Member{
+                //constructor(id, pw){
+                //    this.id= id;
+                //    this.pw= pw;
+                //}
+
+                //생성자 오버로딩은 문법적으로 불가함
+                //constructor(){
+                //    this.id= "익명";
+                //    this.pw= 0;
+                //}
+
+                //생성자 오버로딩 없기에 다른 기법 사용
+                //파라미터의 디폴트 값 기술 적용 [c++에 있는 기술]
+                constructor(id='익명', pw=0){   //파라미터의 디폴트 벨류 기술
+                    this.id= id;
+                    this.pw= pw;
+                }
+
+                //일반 메소드도 오버로딩이 안되나??
+                output(){
+                    document.write('no data!<br>');
+                }
+
+                //함수 오버로딩?? -- 에러는 아님. 대신
+                //오버로딩이 아니라 덮어쓰기 임.
+                //위 output()함수를 새로 정의한 것임    오버로딩은 존재x
+                output(a){
+                    document.write(a+ ': data!<br>');
+                }
+
+
+
+
+                show(){
+                    document.write('ID: '+ this.id+ ', '+ 'PW:' + this.pw+ '<br>');
+                }
+
+            }
+            var m= new Member('aaa', 1234);
+            m.show();
+
+            var m2= new Member();   //값을 안주면?
+            m2.show();  //undefined,undefined
+
+            //만약에 값을 안주면 기본값으로 "익명", 0000 으로 적용되고 싶다면
+            //생성자 오버로딩: 같은이름 다른 파라미터 //ERROR - 
+
+            m2.output();
+            m2.output(10);
+
+        </script>
+
+        <!-- 상속 -->
+        <hr>
+
+        <script>
+
+            class Human{
+                constructor(name, age){
+                    this.name= name;
+                    this.age= age;
+
+                }
+
+                show(){
+                    document.write(this.name+ ', '+ this.age);
+                }
+            }
+
+            let h= new Human('sam', 20);
+            h.show();
+            document.write('<hr>');
+
+            //Human을 상속하는 Student클래스 선언
+            class Student extends Human{
+                constructor(name, age, major){
+                    //ERROR - 반드시 명시적으로 부모클래스의 생성자 호출문이 있어야만 함
+                    //this.name= name;
+                    //this.age= age;
+                    super(name, age);    //부모클래스의 생성자 호출
+                    this.major= major;
+                }
+
+                //기존에 있던 show()가 마음에 들지 않으면 변경
+                //오버라이드 Override
+                show(){
+                    super.show();
+                    document.write(" ,"+ this.major);
+                }
+            }
+
+            let s= new Student('robin', 25, 'android');
+            s.show();
+
+        </script>
+
+        <hr>
+
+        <!-- statci 메소드, 속성 -->
+        <script>
+            //정적멤버
+            class First{
+                static show(){
+                    document.write('first show!<br>');
+                }
+            }
+
+            //static 멤버는 객체 생성없이 클래스명으로 호출 가능
+            First.show();
+
+            //정적 멤버변수(속성)
+            class Second{
+                constructor(){
+                    //static this.name= "aaa";  //ERROR
+                    //static var a;   //이것도 ERROR
+                }
+                static name= 'aa';
+            }
+            document.write(Second.name+ '<br>');
+
+            //static도 나중에 동적으로 추가할 수 있음
+            Second.age= 30;
+            document.write(Second.age+ '<br>');
+
+            //자바와 다르게 static은 객체에서는 사용불가
+            let s3= new Second();
+            document.write(s3.name+ '<br>');    //새로운 인스턴스 변수 추가된 것임
+
+
+        </script>
+
+        <!-- 구조분해할당 문법 -->
+        <hr>
+        <script>
+
+            class Nice{
+                constructor(){
+                    this.name= 'kim';
+                    this.age= 20;
+                    this.address= 'seoul';
+                }
+            }
+
+            const n= new Nice();
+            document.write(n.name+ '<br>');
+            document.write(n.age+ '<br>');
+            document.write(n.address+ '<br>');
+
+            //객체의 멤버변수를 쪽 뽑아와서 일반 변수에 대입해주기
+            //구조분해할당
+            const{name, age}= n;
+            document.write(name+ '<br>');
+            document.write(age+ '<br>');
+
+            //구조분해 할당은 함수의 파라미터로 객체를 전달할 때
+            //많이 사용됨!!!
+
+            //함수 선언
+            function showAddressNice( {address}){
+                document.write(address+ '<br>');
+
+            }
+            showAddressNice(n);
+
+            //주의
+            const { nam}= n;    //이름이 다르면 구조분해할당 못함
+            document.write(nam+ '<br>');
+
+        </script>
+
+    </body>
+</html>

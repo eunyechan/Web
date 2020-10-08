@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>연산자, 제어문</title>
+
+        <!-- 스크립트 작성 -->
+        <script>
+            //연산자 중 특이한 점
+            var a= 1;
+            var b= "1";
+            var c= 1.0;
+
+            //JS에서 == 비교연산자는 값이 같은지만 비교(자료형 구분 없음)
+            document.write( a==b );
+            document.write('<br>');
+
+            document.write( a==c );
+            document.write('<br>');
+
+            //자료형과 값을 모두 비교해주는 비교연산자 ===
+            document.write( a===b ); //false
+            document.write('<br>');
+
+            document.write( a===c ); //true [정수든 실수든 다 number타입임]
+            document.write('<br>');
+
+            document.write('<hr>');
+
+            //0 나눗셈
+            document.write(10/0); //무한 - infinity
+            document.write('<br>');
+
+            // 비트연산자 >>>
+            var f=10;
+            document.write(f>>2);
+            document.write('<br>');
+            document.write(f>>>2);
+            document.write('<br>');
+
+            //양수일 때는 차이 없고 음수일때만 차이 있음
+            f= -16;
+            document.write(f>>2); //부호비트 빼고 시프트
+            document.write('<br>');
+
+            document.write(f>>>2); //부호비트도 시프트함 - 부호가 바뀜
+            document.write('<br>');
+
+            //숫자표현의 최대 값 : 2^1024 -1 
+            document.write(1234567891234567891243456789);
+            document.write('<br>');
+
+            document.write(Number.MAX_VALUE);
+            document.write('<br>');
+
+            //변수 선언할 때 특이하게도 var키워드 없이도 가능함
+            k=10; //var 키워드 없이 만든 변수 - 전역변수가 됨
+            document.write(k);
+            document.write('<br>');
+
+            //새로운 연산자 : in, delete 는 배열과 객체 수업 때 소개
+
+            document.write('<hr>');
+
+            //수치형과 문자열의 변환
+            var h=1;
+            document.write(typeof(h));
+            document.write('<br>');
+
+            //h= String(h); //number-> string
+            h= h+"";
+            document.write(typeof(h));
+            document.write('<br>');
+
+            //string-> number
+            h= parseInt("4");
+            document.write(typeof(h));
+            document.write('<br>');
+
+            //숫자가 아닌 문자열을 parse하면??
+            h= parseInt("aaa");
+            document.write(typeof(h));
+            document.write('<br>');
+            document.write(h);      //NAN (Not a Number)
+            document.write('<br>');
+
+            // 실수(소수점 숫자)변환은??
+            h= parseFloat("3.14"); //parseDouble()은 존재하지 않음
+            document.write(h);
+            document.write('<br>');
+
+            document.write('<hr>');
+
+            //(수치형 <-> 문자형)을 왜 해야하는가?
+            //사용자의 입력은 무조건 string형으로 읽어짐..
+            var age= prompt("input your age", "0");
+            document.write(age +3);
+            document.write('<br>');
+
+            age= parseInt(age);
+            document.write(age +3);
+            document.write('<br>');
+
+            //다이얼로그로 사용자 입력받는 것은 짜증
+            //<input>요소를 이용해서 입력받고 JS에서 제어
+            
+
+
+
+        </script>
+
+    </head>
+
+    <body>        
+    </body>
+</html>

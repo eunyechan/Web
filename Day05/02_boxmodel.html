@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Box model</title>
+        <meta charset="utf-8">
+
+        <style>
+            p.border{
+                /* 경계선 스타일 [width지정없으면 자동 3px]*/
+                border-style: solid;
+
+                /* top, right, bottom, left로 나누어 스타일링 가능 */
+                border-top-style: dotted;
+
+                /* 경계선 두께 : px, thin, medium, thick */
+                border-width: 3px;
+                border-bottom-width: 8px;
+
+                /* 색상 */
+                border-color: lightskyblue;
+                border-right-color: maroon;
+
+                /* 모서리 둥글게 */
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                border-top-right-radius: 0px;
+
+                /* 경계선 이미지 */
+                /* 이미지가 보일만큼 경계선 두께 조절 */
+                border: 30px solid transparent;
+
+                border-image-source:  url("./border.png");
+                border-image-slice: 30 30 ;/*높이, 너비*/ 
+                border-image-repeat: round;
+
+                /* 요소크기*/
+                width: 70%;
+                height: 100%;
+
+                /* 마진 */
+                /* margin-left: 50px; */
+                /* 마진을 이용해서 (블럭)요소 중앙정렬 */
+                margin-left: auto; margin-right: auto;
+            }
+
+            /* 인라인 요소의 크기지정해보기 */
+            /* 인라인 요소는 크기지정이 불가능함 */
+            a{background-color: royalblue; width: 50%;}
+            em{background-color: saddlebrown;  width: 50%;}
+
+            /* 인라인 요소중(인라인 블럭요소)에서 크기지정 가능한 요소들 */
+            input{width: 100%; background-color: silver;}
+            img{width: 300px;}
+
+            /* 두 요소 마진은 서로 겹침 */
+            #p1{background-color: slategray; height: 50px; margin: 0px; margin-bottom: 10px;}
+            #p2{background-color: tan; height: 50px; margin: 0px; margin-top: 20px;}
+
+            /* 마진에 음수를 넣으면 요소가 겹침*/
+            #p1{margin: 0px;}
+            #p2{margin: 0px; margin-top: -30px; width: 50%;}
+
+            /* 배경 색상, 이미지 지정 */
+            p#back{
+                background-color: teal;
+                background-image: url("./image.png");
+                background-size: 200px 100px;
+
+                background-repeat: repeat;/*기본*/
+                background-repeat: repeat-x;
+                background-repeat: no-repeat;
+
+                background-position: center;
+                background-position: right top;
+                background-position: top center;
+
+                /* 축약형 */
+                background: teal url('./image.png') no-repeat center;
+                
+                
+                padding: 30px;
+            }
+
+
+                /* 배경이미지가 화면에 붙는 방식지정 */
+                p#attachment{
+                    width: 60%;
+                    height: 300px;
+                    border: 2px solid blue;
+                    overflow: scroll;
+
+                    margin-left: auto; margin-right: auto;
+
+                    background-image: url("./image.png");
+                    background-size: 200px 100px;
+                    background-repeat: no-repeat;
+                    background-position: center;
+
+                    /* 배경이미지가 붙는 형태 지정 */
+                    background-attachment: scroll; /*기본 : 콘텐츠가 스크롤 되어도 이 p요소의 배경은 항상 배경의 포지션을 유지함*/
+                    background-attachment: local; /*요소의 콘텐츠와 닽이 스크롤 됨(단, 콘텐츠가 요소보다 클때)*/
+                    background-attachment: fixed;/*브라우저의 영역을 기준으로 배치(단, p요소의 배경이므로 p요소의 밖에서는 보이지 않음)*/
+                }
+        </style>
+
+    </head>
+    
+    <body>
+        
+        <!-- 경계선 Border/ 요소크기/ 중앙정렬 -->
+        <p class="border">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dicta veritatis aliquid laudantium est dolorem cupiditate minus a, architecto molestias unde, adipisci error accusantium? Voluptate quos saepe obcaecati deleniti accusamus!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil dicta veritatis aliquid laudantium est dolorem cupiditate minus a, architecto molestias unde, adipisci error accusantium? Voluptate quos saepe obcaecati deleniti accusamus!
+
+        </p>
+
+        <!-- 인라인 요소는 기본적으로 width, height이 안됨 -->
+        <a href="">Google</a>
+        <em>Nice to meet you</em>
+
+        <!-- 인라인 요소중에서 width,height이 되는 요소가 있음 -->
+        <input type="text"> 
+        <img src="./back.jpg">
+
+        <hr>
+        <!-- margin -->
+        <div class="m">
+            <p id="p1">p1</p>
+            <p id="p2">p2</p>
+
+        </div>
+
+        <!-- 배경 -->
+        <p id="back">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae voluptates tempora, quo veritatis autem nemo mollitia dolorem ipsa architecto, eveniet quaerat ut totam sequi ullam eum animi? Laboriosam, harum recusandae!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae voluptates tempora, quo veritatis autem nemo mollitia dolorem ipsa architecto, eveniet quaerat ut totam sequi ullam eum animi? Laboriosam, harum recusandae!
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae voluptates tempora, quo veritatis autem nemo mollitia dolorem ipsa architecto, eveniet quaerat ut totam sequi ullam eum animi? Laboriosam, harum recusandae!
+        </p>
+
+        <!-- background-attachment -->
+        <p id="attachment">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia eum laboriosam asperiores optio magnam iusto quod veniam pariatur natus exercitationem. Eligendi tenetur, error pariatur a cumque ratione! Accusamus, officiis harum?
+            
+
+        </p>
+
+    </body>
+</html>

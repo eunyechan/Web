@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>쇼핑 카트</title>
+        <meta charset="utf-8">
+
+        <style>
+            body{
+                height: 100%;
+                background-color: lemonchiffon;
+            }
+
+            table{
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            }
+
+            table caption{
+                color: rosybrown;
+                text-decoration: underline;
+            }
+        </style>
+    </header>
+
+    <body>
+        <form action="#">
+            <table border="1">
+                <caption>Shopping Cart</caption>
+                <tr>
+                    <td>품목</td>
+                    <td>가격</td>
+                    <td>수량</td>
+                    <td>합계</td>
+                </tr>
+                <tr>
+                    <td>컴퓨터 세트</td>
+                    <td>2,000,000원</td>
+                    <td>
+                        <input type="number" min="0" step="1" value="0">
+                    </td>
+                    <td>
+                        <input type="text" size="6" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>티셔츠</td>
+                    <td>50.000원</td>
+                    <td><input type="number" min="0" step="1" value="0">
+                    </td>
+                    <td>
+                        <input type="text" size="6" value="0">
+                    </td>
+                </tr>
+                <tr>
+                    <td>영화파일</td>
+                    <td>5,000</td>
+                    <td>
+                        <input type="number" min="0" step="1" value="0">
+                    </td>
+                    <td>
+                        <input type="text" size="6" value="0">
+                    </td>
+                </tr>
+            </table>
+            <input type="text" value="계산">
+            <input type="submit" value="구매">
+            <input type="reset" value="초기화">
+        </form>
+        
+    </body>
+</html>

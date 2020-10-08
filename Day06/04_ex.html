@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>04 ex</title>
+        <meta charset="utf-8">
+        
+        <style>
+            /* display속성 */
+            /* 블럭요소를 인라인 요소로 */
+            #aa{display: inline; width: 300px;}
+            #aa{display: inline-block; width: 300px;}
+
+            /* 인라인 요소를 블럭요소로 */
+            img{display: block;}
+
+            /* dispaly의 none값 적용 : 디스플레이를 하지 않음. 즉, 그려내지 않음 [안드로이드의 gone]  */
+            li{display: inline; margin-right: 20px;}
+            /* li.bb{display: none;} */
+            /* 안드로이드의 invisible 같은 값 지정은?? */
+            li.bb{visibility: hidden;}/*공간은 차지하고 보이지 않음.*/
+        </style>
+            
+            <!-- position속성 알아보기  -->
+        <style>
+            #one{
+                background-color: cornflowerblue; 
+                width: 200px;
+                height: 50px;
+            }
+
+            /* position연습 */
+            /* 1)static : 원래 놓여질 자리에 놓여지는 값 */
+            /* 2)rerlative : 원래 놓여질 자리에서 특정좌표로 지정 가능 */
+
+            div.aaa{position: relative;}
+
+            #two{
+                position: static; /*기본값 : left와 같은 좌표지정값이 적용 안됨*/
+                position: relative; /*좌표값 적용됨*/
+                position: absolute; /*좌표값을 안주면 이 html문서의 좌하단을 기준으로*/
+                position: fixed; /*브라우저의 창을 기준으로*/
+
+                /* absolute속성을 지정한 요소의 부모요소가 position="static"이 아니면 이 absolute는 부모의 좌상단을 기준으로 함 */
+                
+                /* 요소의 위치(좌표)지정 속성 */
+                /*left: 50px;
+                top: 30px;*/
+                right: 50px;
+                top: 10px;
+
+                background-color: coral; 
+                width: 200px;
+                height: 50px;
+            }
+
+            #three{
+                background-color: crimson; 
+                width: 200px;
+                height: 50px;
+            }
+
+           
+        </style>
+    </head>
+
+
+    <body>
+        
+        <p id="aa">Hello world</p>
+        <a href="">Good day</a>
+        <strong>good morning</strong>
+        <img src="./pa.jpg" alt="paris">
+
+        
+
+        <hr>
+
+        <ul>
+            <li>aaa</li>
+            <li class="bb">bbb</li>
+            <li>ccc</li>
+        </ul>
+
+        <hr>
+
+        <!-- 블럭요소와 인라인요소를 같이 사용할 때 고려할 것들! -->
+
+        <!-- 블럭요소안에 다른 블럭, 인라인 요소를 넣을 수 있음 -->
+        <div style="background-color: burlywood; border: solid; padding: 5px;">Nice  <p>aaa</p>  world</div>
+
+        <!-- 인라인요소안에는 블럭요소를 넣을 수 없음(되긴 하지만 이상해짐) -->
+        <span style="background-color: cadetblue; border: solid; padding: 5px;">Nice <p>aaa</p> world</span>
+
+        <!-- 블럭요소안에 같은 블럭요소를 넣으면 이상해짐 -->
+        <p style="background-color: burlywood; border: solid; padding: 5px;">Nice <p>aaa</p> world</p>
+        <h2>Hello <h2>aaa</h2> world</h2>
+
+        <!-- 가급적 요소안에 요소를 넣을 때는 줄바꿈을 명시적으로 -->
+        <div>
+            <h1>aaa</h1>
+            <p>aaa</p>
+        </div>
+
+        <hr>
+
+        <!-- position속성 -->
+        <div class="aaa">
+            <p id="one">block #1</p>
+            <p id="two">block #2</p>
+            <p id="three">block #3</p>
+        </div>
+
+    </body>
+</html>

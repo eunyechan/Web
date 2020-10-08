@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>input test</title>
+    </head>
+
+    <body>
+        <!-- 한줄입력 상자 -->
+        <!-- name속성 : 서버에 데이터를 보낼 때 '식별자' -->
+        <input type="text" size="40" name="in01">
+        <input type="password">
+        
+        <hr>
+        
+        <!-- 라디오 버튼 : name의 값이 같아야 한 그룹으로 인지-->
+        라디오버튼:
+        <input type="radio" name="rg" value="female">여성
+        <input type="radio" name="rg" value="male">남성
+
+        <hr>
+
+        <!-- <label>을 사용하면 글씨를 클릭해도 선택되도록 할 수 있음. -->
+        <input type="radio" name="rg2" value="aaa" id="rb1" checked="checked">
+        <label for="rb1">aaa</label>
+
+        <input type="radio" name="rg2" value="bbb" id="rb2">
+        <label for="rb2">bbb</label>
+
+        <hr>
+        <!-- 체크박스버튼, 역시 같은 name을 사용 -->
+        <!-- <label>요소안에 input요소를 넣으면 자동 for속성처럼 사용 가능 -->
+        <label><input type="checkbox" name="fruits" value="apple">Apple</label>
+        <label><input type="checkbox" name="fruits" value="orange">Orange</label>
+        <label><input type="checkbox" name="fruits" value="banana">Banana</label>
+
+        <!-- php에서는 선택된 checkbox들의 value값이 배열로 전달됨(키는: fruits) -->
+
+        <br>
+        <br>
+
+        <!-- submit, reset : form요소안에서만 의미 있음 -->
+        <input type="submit" value="전송">
+        <input type="reset" value="리셋">
+
+        <hr>
+        
+        <!-- 버튼 -->
+        <!-- 1. type="button" -->
+        <input type="button" value="중복체크" onclick="alert('중복된 id입니다.')">
+
+        <!-- 2. <button>요소 -->
+        <button onclick="alert('clicked!')">button</button>
+
+        <!-- <form>요소안에서는 <button>요소의 동작에 오류가 다소 발생함 -->
+        
+        <br>
+        <br>
+
+        <!-- 이미지 버튼  -->
+        <button><img src="./aaa.png"></button>
+
+        <!-- form요소안에서 사용하면 submit과 같은 역할 -->
+        <input type="image" src="./aaa.png">
+
+        <a href="./01_ex.html"><img src="./aaa.png" alt=""></a>
+
+        <hr>
+
+        <!-- 여러줄 입력 -->
+        <textarea nmae="ta" cols="30" rows="10"></textarea>
+
+        <hr>
+        <!-- 콤보박스 : <select> -->
+        <select name="sel">
+            <option value="aaa">aaa</option>
+            <option value="bbb">bbb</option>
+            <option value="ccc">ccc</option>
+        </select>
+
+        <!-- optionGroup -->
+        <select name="sel2">
+            <optgroup label="text">
+                <option value="aaa">aaa</option>
+                <option value="bbb">bbb</option>
+                <option value="ccc">ccc</option>
+            </optgroup>
+
+            <optgroup label="number">
+                <option value="111">111</option>
+                <option value="222">222</option>
+                <option value="333">333</option>
+            </optgroup>
+        </select>
+
+        <br>
+        <br>
+
+        <!-- fieldset : 영역을 그룹 (테두리선과 라벨적용) -->
+        <fieldset>
+            <legend>인적사항</legend>
+            <label>이름 : <input type="text"></label><br>
+            <label>주소 : <input type="text"></label>
+
+        </fieldset>
+
+
+
+        
+    </body>
+
+</html>

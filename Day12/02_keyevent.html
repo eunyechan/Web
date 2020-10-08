@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body onkeypress="aaa()">
+        <h3 id="hh"></h3>
+        
+        <script>
+            function aaa(){
+                //키이벤트의 입력값은 window객체의 속성으로 존재함
+                var keycode= window.event.keyCode;
+
+                var hh= document.getElementById('hh');
+                hh.innerHTML= keycode+", "+String.fromCharCode(keycode)+", "+event.shiftKey;
+            }
+        </script>
+
+        <hr>
+
+        <!-- 이벤트 처리방식에 따라 실행되는 콜백함수 안에서 -->
+        <!-- this키워드의 살짝 다름 -->
+        <input type="text" onkeyup="bbb()">
+        <script>
+            var bbb= function(){
+                alert(this); //this : 이 문서의 최상위객체 : window
+                
+            };
+        </script>
+        <input type="text" id="in1">
+        <script>
+            document.getElementById('in1').addEventListener('keyup',function(){
+                alert(this); //this : 리스너가 추가된 요소 객체를 의미함 [여기서는 input요소]
+            });
+        </script>
+
+        <hr>
+        <!-- 새로생긴 기술 -->
+        <!-- id로 요소를 찾을 때 getElementXXX() 없이 요소 제어-->
+        <!-- 이미 요소의 id속성값이 window객체의 멤버변수(속성)이 됨 -->
+        <button id="btn1">button</button>
+        <h2 id="kkk"></h2>
+        <script>
+            btn1.onclick= function(){
+                //alert();
+                kkk.innerHTML="Hello world!!";
+            }
+        </script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>font test</title>
+        <meta charset="utf-8">
+
+        <!-- 내부 스타일시트 적용 -->
+        <style>
+
+            p{font-family: "edwardian Script ITC",serif;}
+            p{font-family: "휴먼매직체",sans-serif;}
+            p{font-family: "cursive";}
+            p{font-family: "fantasy";}
+            p{font-family: "monospace";}
+
+            /* 사용자정의 글꼴 : 웹폰트 */
+            @font-face {
+                font-family: "MY font";
+                src: url("./Swagger.ttf");
+                /* css의 다른 파일 경로는 url()사용 */
+                }
+
+                /* 웹폰트 적용하기 */
+                p{font-family: "My font", sans-serif;}
+
+                /* 글씨 사이즈 */
+                p{font-size: 1.5em;} /* em단위 원래사이즈의 몇배 */
+
+                /* bold, normal */
+                p{font-weight: bold;}
+
+                /* italic(필기체느낌 기울기), oblique(그냥 기울기) */
+                p{font-style: italic;}
+
+                /* 폰트 속성들 한번에 설정하기(축약형) : 순서[weight/style 이 둘은 순서 상관 x] size/fontfamliy */
+                p{font: bold italic 2em "My Font","휴먼매직체",serif;}
+
+                /* 텍스트 정렬 */
+                /* 양쪽 정렬 */
+                p{text-align: justify;}
+
+                /* 가운데 정렬 */
+                p{text-align: center;}
+
+                /* 텍스트 변환 */
+                /* 단어의 첫글자 대문자 */
+                p{text-transform: capitalize;}
+                p{text-transform: uppercase;}
+
+                /* 텍스트 줄긋기(장식) */
+                p{text-decoration: line-through;}
+                p{text-decoration: none;}
+
+                /* 텍스트 그림자 */
+                p{text-shadow: 4px 2px 5px blueviolet;}
+
+                /* 워드 랩 */
+                p#ee{width: 5;
+                border: 1px solid blue;
+                /* 워드랩이 없으면 긴글씨는 영역을 벗어남 [한글은 자동 워드랩] */
+                word-wrap: break-word;
+                }
+
+                /* 다중컬룸 */
+                p.lorem{
+                    column-count: 2;
+                    column-gap: 60px;
+                    column-rule: 4px dashed green;
+                }
+
+        </style>
+
+    </head>
+
+
+
+    <body>
+
+        <p>Hello</p>
+        <p>안녕하세요</p>
+
+        <p class="lorem">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aut recusandae autem ratione velit voluptas accusamus, omnis distinctio suscipit nobis ea deserunt enim sunt consectetur dolore! Minima voluptates et excepturi?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aut recusandae autem ratione velit voluptas accusamus, omnis distinctio suscipit nobis ea deserunt enim sunt consectetur dolore! Minima voluptates et excepturi?
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ex aut recusandae autem ratione velit voluptas accusamus, omnis distinctio suscipit nobis ea deserunt enim sunt consectetur dolore! Minima voluptates et excepturi?
+        </p>
+
+        <!-- word wrap -->
+        <p id="ee">
+            한글은 전혀 문제없이 자동으로 워드랩 됨.
+            asdfairnviraubdubfbelieveadsjnasdkjcb
+        </p>
+
+        <!-- 텍스트 정렬 text-align은 블럭요소에만 적용됨-->
+        <div style="text-align: center; background-color: greenyellow;">Hello</div>
+        <span style="text-align: center; background-color: indianred;">Nice</span>
+        
+    </body>
+
+
+</html>
